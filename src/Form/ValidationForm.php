@@ -56,7 +56,7 @@ class ValidationForm extends Form
     protected function _execute(array $data)
     {
         $errorMessages = ['Request Validation Error.'];
-        foreach ($this->errors() as $field => $error) {
+        foreach ($this->getErrors() as $field => $error) {
             if ($this->errorHandler) {
                 call_user_func($this->errorHandler, $field, $error, $this->extraData);
             } else {
